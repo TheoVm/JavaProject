@@ -9,16 +9,14 @@ public abstract class Personagem{
     private int defesa ;
     private int ataque;
     private List<Item> tesouros = new ArrayList<>();;
-    private String localizacao = "a1";
+    private int[] localizacao = {0, 0};
 
-    // Personagem(String nome, int vida, int velocidade, int defesa, int ataque, int tesouros, String localizacao){
+    // public Personagem(String nome, int vida, int velocidade, int defesa, int ataque){
     //     this.nome = nome;
     //     this.vida = vida;
     //     this.velocidade = velocidade;
     //     this.defesa = defesa;
     //     this.ataque = ataque;
-    //     this.tesouros = tesouros;
-    //     this.localizacao = localizacao;
     // }
 
     public String getNome() {
@@ -42,7 +40,7 @@ public abstract class Personagem{
     public List<Item> getTesouros() {
         return tesouros;
     }
-    public String getlocalizacao() {
+    public int[] getlocalizacao() {
         return localizacao;
     }   
 
@@ -67,8 +65,9 @@ public abstract class Personagem{
     public void adicionarTesouros(Item item) {
         tesouros.add(item);
     }
-    public void setLocalizacao(String localizacao) {
-        this.localizacao = localizacao;
+    public void setLocalizacao(int linha, int coluna) {
+        this.localizacao[0] = linha;
+        this.localizacao[1] = coluna;
     }
 
     public void exibirStatus() {
